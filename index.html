@@ -1,0 +1,31 @@
+<h1>Video no Controls AutoRedirect example</h1>
+
+<div class="container">
+	<video id="myvid" controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
+		 <source src="https://plyr-test-video.s3.amazonaws.com/Surfer1.mp4
+		 " type="video/mp4" size="576">
+
+	</video>
+</div>
+
+<script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+
+<script>
+// Change the second argument to your options:
+// https://github.com/sampotts/plyr/#options
+const player = new Plyr('video', {captions: {active: true},
+	autoplay: true,
+	clickToPlay: false,
+	disableContextMenu: true,
+	controls: false});
+
+// Expose player so it can be used from the console
+window.player = player;
+</script>
+
+<script>
+	video = document.getElementById('myvid');
+	video.addEventListener('ended',function() {       
+		window.location.href = 'https://forms.gle/VFBxP4qiU1ChPsi7A';
+	})
+</script>
